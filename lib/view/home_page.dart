@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 
-import '../domain/service/service.dart';
 import '../domain/widgets/circleanim.dart';
 import '../domain/widgets/erroranim.dart';
 
@@ -47,9 +46,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       minimumShakeCount: 1,
       shakeSlopTimeMS: 500,
       shakeCountResetTime: 3000,
-      shakeThresholdGravity: 2.7,
+      shakeThresholdGravity: 1.7,
     );
-
     _controller1 = AnimationController(
       duration: Duration(seconds: 3),
       vsync: this,
@@ -143,8 +141,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 height: 500,
                 child: MaterialButton(
                   onPressed: () {
-                    getHttp();
-                    showText();
+                    setState(() {
+                      getHttp();
+                      showText();
+                    });
                   },
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,

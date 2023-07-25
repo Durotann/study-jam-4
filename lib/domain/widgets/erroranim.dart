@@ -9,14 +9,17 @@ class ErrorCircle extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: 250),
       alignment: Alignment.center,
-      width: togl ? 1 : 350,
-      height: togl ? 1 : 350,
+      width: togl ? 1 : 380,
+      height: togl ? 1 : 380,
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           gradient: RadialGradient(
-            colors: [Colors.red.withOpacity(0.5), Colors.red.withOpacity(0.1)],
-            stops: [0.6, 1.0],
+            colors: [
+              Color.fromRGBO(255, 0, 0, 0.5),
+              Color.fromRGBO(231, 21, 21, 0.1)
+            ],
+            stops: [0.6, 3.0],
             center: Alignment.center,
           ),
         ),
