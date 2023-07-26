@@ -153,6 +153,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
+                        
                         Image.asset('image/Mask group.png'),
                         AnimCircle(togl: tog),
                         Center(
